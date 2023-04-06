@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Mcfyden, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+     <body>
+        <referenceContainer name="header-wrapper">
+            <container name="header-links-wrapper" label="header links wrapper" as="header-links-wrapper" htmlTag="div" after="minicart" htmlClass="header links wrapper">
+                 <container name="header-account-wrapper" label="header account wrapper" as="header-account-wrapper" htmlTag="ul" htmlClass="header account wrapper">
+                    <block class="Magento\Customer\Block\Account\Link" name="my-account-link" after="-">
+                        <arguments>
+                            <argument name="label" translate="true" xsi:type="string">My Account</argument>
+                            <argument name="class" xsi:type="string">my-account</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="page.top">
+            <container name="navigation.full.search" label="Navigation Full Search" htmlTag="div" htmlClass="navigation-full-search" before="-"/>
+        </referenceContainer>
+        <referenceBlock name="register-link" remove="true" /> 
+        <referenceBlock name="wish-list-link" remove="true" />
+        <referenceBlock name="header.panel.wrapper" remove="true" />
+        <referenceBlock name="store.settings" remove="true" />
+        <move element="navigation.sections" destination="header-wrapper" after="logo"/>
+        <move element="top.search" destination="navigation.full.search"/>
+        <move element="navigation.full.search" destination="header-wrapper" after="navigation.sections" />
+    </body>
+</page>

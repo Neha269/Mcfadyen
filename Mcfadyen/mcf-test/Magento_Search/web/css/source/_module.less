@@ -1,0 +1,52 @@
+// /**
+//  * Copyright © Mcfyden ApS, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+.block-search {
+    .block-title {
+        .lib-font-size(0);
+        display: block;
+        margin: 0;
+        padding-top: 10px;
+
+        &::before {
+            .lib-css(background, @color-white);
+            .lib-css(content, @icon-custom-search);
+            .lib-css(font-family, @icons__font-name);
+            .lib-font-size(22);
+            .lib-line-height(1);
+        }
+    }
+
+    .block-content {
+        display: none;
+
+        .form {
+            &.form.minisearch{
+                width: 350px;
+                top: 4px;
+                position: absolute;
+                margin: 20px 10px;
+                right: -15px;
+            }
+
+            .nested {
+               .lib-font-size(0);
+            }
+
+            .action.search {
+                &::before {
+                    .lib-css(background, @color-white);
+                    .lib-css(content, @icon-custom-search);
+                    .lib-font-size(22);
+                    .lib-line-height(1);
+                }
+            }
+        }
+    }
+}

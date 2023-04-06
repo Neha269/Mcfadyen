@@ -1,0 +1,12 @@
+<?php
+$galleryImages = $this->getGalleryImages();
+$_product = $this->getProduct();
+?>
+<div class="main-image-container">
+    <ul class="main-image" style="list-style: none;">
+        <?php foreach ($galleryImages as $image): ?>
+          <li><a href="javascript:;" class="product-image"><img style="width: auto;" class="lazyload" data-src="<?= $image->getData('medium_image_url')?>" src="<?= $image->getData('medium_image_url')?>" alt="<?= $_product->getName() ?>" />
+          </a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
